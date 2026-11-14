@@ -150,21 +150,8 @@
       </div>
     </div>
 
-    <!-- Navegação de Abas Rápidas -->
-    <div class="w-full flex rounded-xl bg-samba-card/90 p-1 border border-stone-800 mb-6">
-      <button onclick="switchTab('links')" id="tabBtn-links" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-gradient-to-r from-samba-gold to-samba-terracotta text-samba-dark shadow">
-        <i class="fa-solid fa-link mr-1.5"></i> Links & Redes
-      </button>
-      <button onclick="switchTab('agenda')" id="tabBtn-agenda" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all text-stone-400 hover:text-white">
-        <i class="fa-regular fa-calendar-days mr-1.5"></i> Shows & Agenda
-      </button>
-      <button onclick="switchTab('orcamento')" id="tabBtn-orcamento" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all text-stone-400 hover:text-white">
-        <i class="fa-solid fa-file-contract mr-1.5"></i> Contratar
-      </button>
-    </div>
-
-    <!-- Conteúdo 1: Links & Redes -->
-    <main id="section-links" class="w-full space-y-3.5">
+    <!-- Lista Principal: Links, Press Kit e Simulação -->
+    <main class="w-full space-y-3.5">
 
       <!-- Link Principal / Destaque: WhatsApp Contratação Direta -->
       <a href="https://wa.me/5512988987282?text=Ol%C3%A1%20Jason!%20Gostaria%20de%20consultar%20a%20disponibilidade%20para%20um%20show." target="_blank" rel="noopener noreferrer" 
@@ -253,126 +240,57 @@
         </div>
       </div>
 
+      <!-- Simulação Rápida para Evento (no fim da lista, depois do Press Kit) -->
+      <div class="pt-2">
+        <div class="p-5 rounded-2xl glass-card text-left">
+          <h3 class="text-sm font-bold text-white flex items-center gap-2 mb-2">
+            <i class="fa-solid fa-envelope-open-text text-samba-gold"></i>
+            Simulação Rápida para Evento
+          </h3>
+          <p class="text-xs text-stone-400 mb-4">
+            Preencha os detalhes para gerar a mensagem instantânea no WhatsApp do produtor:
+          </p>
+
+          <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Seu Nome / Contratante</label>
+              <input type="text" id="quoteName" required placeholder="Ex: Fernanda Lima" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Tipo de Evento</label>
+                <select id="quoteType" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
+                  <option value="Casamento">Casamento</option>
+                  <option value="Aniversário / Festa">Aniversário</option>
+                  <option value="Bar / Restaurante">Bar / Restaurante</option>
+                  <option value="Corporativo">Corporativo</option>
+                  <option value="Festival / Público">Festival</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Formato</label>
+                <select id="quoteFormat" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
+                  <option value="Voz e Violão/Cavaco">Voz e Violão (Intimista)</option>
+                  <option value="Trio de Samba">Trio (Percussão + Cordas)</option>
+                  <option value="Banda Completa">Banda Completa (Roda de Samba)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Data Estimada & Cidade</label>
+              <input type="text" id="quoteDetails" placeholder="Ex: 15 de Outubro em São José dos Campos" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
+            </div>
+
+            <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-samba-dark font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Enviar Proposta Direta
+            </button>
+          </form>
+        </div>
+      </div>
+
     </main>
-
-    <!-- Conteúdo 2: Shows & Agenda -->
-    <section id="section-agenda" class="w-full hidden space-y-3">
-      <div class="text-xs font-semibold text-stone-400 px-1 mb-2 flex justify-between items-center">
-        <span>Próximas Apresentações</span>
-        <span class="text-samba-gold"><i class="fa-solid fa-bell mr-1"></i>Shows Confirmados</span>
-      </div>
-
-      <!-- Item de Show 1 -->
-      <div class="p-4 rounded-2xl glass-card flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="bg-samba-terracotta/20 border border-samba-terracotta/40 rounded-xl p-2 text-center min-w-[52px]">
-            <span class="block text-xs uppercase font-extrabold text-samba-terracotta">SÁB</span>
-            <span class="block text-lg font-black text-white">21</span>
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Samba da Esquina Viva</h4>
-            <p class="text-xs text-stone-400">Vila Madalena • São Paulo - SP</p>
-            <span class="inline-block mt-1 text-[10px] text-samba-gold font-semibold">18:00h • Roda Acústica</span>
-          </div>
-        </div>
-        <a href="https://wa.me/5512988987282?text=Gostaria%20de%20reservar%20lugar%20no%20show%20de%20sabado" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
-          Reservar
-        </a>
-      </div>
-
-      <!-- Item de Show 2 -->
-      <div class="p-4 rounded-2xl glass-card flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="bg-samba-gold/20 border border-samba-gold/40 rounded-xl p-2 text-center min-w-[52px]">
-            <span class="block text-xs uppercase font-extrabold text-samba-gold">DOM</span>
-            <span class="block text-lg font-black text-white">29</span>
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Festival Brisa & Cordas</h4>
-            <p class="text-xs text-stone-400">Parque da Cidade • Litoral Norte</p>
-            <span class="inline-block mt-1 text-[10px] text-emerald-400 font-semibold">16:30h • Entrada Gratuita</span>
-          </div>
-        </div>
-        <span class="px-2.5 py-1 text-[11px] font-semibold text-stone-400 bg-stone-800 rounded-lg">
-          Livre
-        </span>
-      </div>
-
-      <!-- Item de Show 3 -->
-      <div class="p-4 rounded-2xl glass-card flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="bg-samba-olive/30 border border-emerald-500/40 rounded-xl p-2 text-center min-w-[52px]">
-            <span class="block text-xs uppercase font-extrabold text-emerald-400">SEX</span>
-            <span class="block text-lg font-black text-white">05</span>
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-white">Noite de MPB & Autoral</h4>
-            <p class="text-xs text-stone-400">Boteco Tradição • SJC</p>
-            <span class="inline-block mt-1 text-[10px] text-samba-accent font-semibold">20:30h • Formato Quarteto</span>
-          </div>
-        </div>
-        <a href="https://wa.me/5512988987282?text=Gostaria%20de%20saber%20sobre%20a%20noite%20no%20Boteco%20Tradicao" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
-          Info
-        </a>
-      </div>
-
-      <div class="p-4 rounded-2xl border border-dashed border-stone-700 text-center">
-        <p class="text-xs text-stone-400">Quer levar o show do Jason para sua cidade ou evento particular?</p>
-        <button onclick="switchTab('orcamento')" class="mt-2 text-xs font-bold text-samba-gold hover:underline">
-          Solicitar Proposta de Show &rarr;
-        </button>
-      </div>
-    </section>
-
-    <!-- Conteúdo 3: Orçamento Rápido -->
-    <section id="section-orcamento" class="w-full hidden space-y-4">
-      <div class="p-5 rounded-2xl glass-card text-left">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2 mb-2">
-          <i class="fa-solid fa-envelope-open-text text-samba-gold"></i>
-          Simulação Rápida para Evento
-        </h3>
-        <p class="text-xs text-stone-400 mb-4">
-          Preencha os detalhes para gerar a mensagem instantânea no WhatsApp do produtor:
-        </p>
-
-        <form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-3">
-          <div>
-            <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Seu Nome / Contratante</label>
-            <input type="text" id="quoteName" required placeholder="Ex: Fernanda Lima" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
-          </div>
-
-          <div class="grid grid-cols-2 gap-2">
-            <div>
-              <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Tipo de Evento</label>
-              <select id="quoteType" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
-                <option value="Casamento">Casamento</option>
-                <option value="Aniversário / Festa">Aniversário</option>
-                <option value="Bar / Restaurante">Bar / Restaurante</option>
-                <option value="Corporativo">Corporativo</option>
-                <option value="Festival / Público">Festival</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Formato</label>
-              <select id="quoteFormat" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
-                <option value="Voz e Violão/Cavaco">Voz e Violão (Intimista)</option>
-                <option value="Trio de Samba">Trio (Percussão + Cordas)</option>
-                <option value="Banda Completa">Banda Completa (Roda de Samba)</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-semibold text-stone-300 uppercase mb-1">Data Estimada & Cidade</label>
-            <input type="text" id="quoteDetails" placeholder="Ex: 15 de Outubro em São José dos Campos" class="w-full bg-samba-dark/90 border border-stone-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-samba-gold">
-          </div>
-
-          <button type="submit" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-samba-dark font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95">
-            <i class="fa-brands fa-whatsapp text-sm"></i> Enviar Proposta Direta
-          </button>
-        </form>
-      </div>
-    </section>
 
     <!-- Rodapé Minimalista -->
     <footer class="mt-10 mb-4 text-center">
@@ -521,22 +439,6 @@
         btnText.textContent = "Copiar Link do Drive";
         closePressKitModal();
       }, 1500);
-    }
-
-    // Controle de Abas
-    function switchTab(tab) {
-      const tabs = ['links', 'agenda', 'orcamento'];
-      tabs.forEach(t => {
-        const section = document.getElementById(`section-${t}`);
-        const btn = document.getElementById(`tabBtn-${t}`);
-        if (t === tab) {
-          section.classList.remove('hidden');
-          btn.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-gradient-to-r from-samba-gold to-samba-terracotta text-samba-dark shadow";
-        } else {
-          section.classList.add('hidden');
-          btn.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all text-stone-400 hover:text-white";
-        }
-      });
     }
 
     // Envio do formulário de orçamento para WhatsApp
