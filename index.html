@@ -69,16 +69,6 @@
       background-image: radial-gradient(rgba(243, 201, 105, 0.12) 1px, transparent 1px);
       background-size: 20px 20px;
     }
-
-    /* Animação de pulso musical */
-    @keyframes barDance {
-      0%, 100% { height: 6px; }
-      50% { height: 22px; }
-    }
-    .equalizer-bar:nth-child(1) { animation: barDance 0.8s ease-in-out infinite; }
-    .equalizer-bar:nth-child(2) { animation: barDance 1.1s ease-in-out infinite 0.2s; }
-    .equalizer-bar:nth-child(3) { animation: barDance 0.7s ease-in-out infinite 0.4s; }
-    .equalizer-bar:nth-child(4) { animation: barDance 0.9s ease-in-out infinite 0.1s; }
   </style>
 </head>
 <body class="min-h-screen text-samba-cream font-sans antialiased flex flex-col items-center justify-start p-4 sm:p-6 samba-wave selection:bg-samba-terracotta selection:text-white">
@@ -134,30 +124,26 @@
       </div>
     </div>
 
-    <!-- Mini Player Dinâmico com Web Audio (Acordes de Samba Brasil) -->
-    <div class="w-full mb-6 p-4 rounded-2xl glass-card relative overflow-hidden">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <button id="audioToggleBtn" onclick="toggleAudioPreview()" class="w-12 h-12 rounded-full bg-gradient-to-r from-samba-gold to-samba-terracotta flex items-center justify-center text-samba-dark font-black text-lg shadow-md hover:scale-105 active:scale-95 transition-all">
-            <i id="playIcon" class="fa-solid fa-play ml-0.5"></i>
-          </button>
-          <div class="text-left">
-            <span class="text-[10px] uppercase font-bold text-samba-gold tracking-widest block">Sintonize o Ritmo</span>
-            <span class="text-sm font-bold text-white block truncate max-w-[170px] sm:max-w-[200px]" id="audioTrackName">Levada de Samba Raiz</span>
-          </div>
+    <!-- Preview Oficial YouTube - Facas (Cover) -->
+    <div class="w-full mb-6 rounded-2xl overflow-hidden glass-card shadow-xl">
+      <div class="px-4 py-3 flex items-center justify-between border-b border-samba-gold/15">
+        <div class="text-left">
+          <span class="text-[10px] uppercase tracking-widest text-samba-gold font-bold block">Em Destaque • Voz e Violão</span>
+          <strong class="text-white text-sm font-bold">Facas (Cover) - Jason</strong>
         </div>
-
-        <!-- Barras de Equalizador -->
-        <div id="equalizerContainer" class="flex items-end gap-1 h-6 px-2 opacity-40 transition-opacity">
-          <span class="equalizer-bar w-1 bg-samba-gold rounded-full"></span>
-          <span class="equalizer-bar w-1 bg-samba-accent rounded-full"></span>
-          <span class="equalizer-bar w-1 bg-samba-terracotta rounded-full"></span>
-          <span class="equalizer-bar w-1 bg-samba-olive rounded-full"></span>
-        </div>
+        <a href="https://youtu.be/M_GpKrN6Dtk" target="_blank" rel="noopener noreferrer" class="text-[11px] text-white bg-samba-terracotta hover:bg-samba-terracotta/80 px-3 py-1.5 rounded-full font-bold transition-colors flex items-center gap-1">
+          YouTube <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+        </a>
       </div>
-      <div class="text-[10px] text-stone-400 text-right mt-2 flex justify-between items-center">
-        <span class="text-stone-500">Preview Acústico Sintetizado</span>
-        <span id="playerStatus" class="italic">Toque para ouvir a harmonia</span>
+      
+      <div class="relative pb-[56.25%] h-0 overflow-hidden bg-samba-dark">
+        <iframe 
+          src="https://www.youtube.com/embed/M_GpKrN6Dtk?rel=0" 
+          title="Facas ( Violão e Voz - Cover ) - Jason" 
+          class="absolute top-0 left-0 w-full h-full border-0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
 
@@ -303,7 +289,7 @@
             <span class="inline-block mt-1 text-[10px] text-samba-gold font-semibold">18:00h • Roda Acústica</span>
           </div>
         </div>
-        <a href="https://wa.me/5512999999999?text=Gostaria%20de%20reservar%20lugar%20no%20show%20de%20sabado" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
+        <a href="https://wa.me/5512988987282?text=Gostaria%20de%20reservar%20lugar%20no%20show%20de%20sabado" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
           Reservar
         </a>
       </div>
@@ -339,7 +325,7 @@
             <span class="inline-block mt-1 text-[10px] text-samba-accent font-semibold">20:30h • Formato Quarteto</span>
           </div>
         </div>
-        <a href="https://wa.me/5512999999999?text=Gostaria%20de%20saber%20sobre%20a%20noite%20no%20Boteco%20Tradicao" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
+        <a href="https://wa.me/5512988987282?text=Gostaria%20de%20saber%20sobre%20a%20noite%20no%20Boteco%20Tradicao" target="_blank" class="px-3 py-1.5 bg-samba-gold/20 hover:bg-samba-gold text-samba-gold hover:text-samba-dark text-xs font-bold rounded-lg transition-colors">
           Info
         </a>
       </div>
@@ -406,7 +392,7 @@
     <footer class="mt-10 mb-4 text-center">
       <div class="flex items-center justify-center space-x-4 mb-2 text-stone-400 text-sm">
         <a href="https://instagram.com/jasonestilolivre" target="_blank" class="hover:text-samba-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" class="hover:text-samba-gold transition-colors"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.youtube.com/channel/UCdWpxVJUxPvx8sXANNgJYFA" target="_blank" class="hover:text-samba-gold transition-colors"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://spotify.com" target="_blank" class="hover:text-samba-gold transition-colors"><i class="fa-brands fa-spotify"></i></a>
       </div>
       <p class="text-[11px] text-stone-500">
@@ -577,83 +563,6 @@
       const whatsappUrl = `https://wa.me/5512988987282?text=${encodedMsg}`;
       window.open(whatsappUrl, '_blank');
       showToast('Abrindo WhatsApp com sua proposta...', 'fa-paper-plane text-emerald-400');
-    }
-
-    // Web Audio API: Sintetizador de Acordes Acústicos (Samba Chords: D7M, Bm7, Em7, A7)
-    let audioCtx = null;
-    let isPlayingAudio = false;
-    let audioLoopTimer = null;
-
-    const sambaCadence = [
-      { name: "Ré Maior 7M (D7M)", freqs: [146.83, 220.0, 277.18, 369.99] },
-      { name: "Si menor 7 (Bm7)", freqs: [123.47, 185.0, 246.94, 293.66] },
-      { name: "Mi menor 7 (Em7)", freqs: [164.81, 196.0, 246.94, 329.63] },
-      { name: "Lá com 7 (A7)", freqs: [110.00, 220.0, 277.18, 329.63] }
-    ];
-
-    function playChord(chordFreqs) {
-      if (!audioCtx) return;
-      const now = audioCtx.currentTime;
-
-      chordFreqs.forEach((freq, idx) => {
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-
-        // Onda triangular / dente-de-serra suave para simular nylon/corda
-        osc.type = idx % 2 === 0 ? 'triangle' : 'sine';
-        osc.frequency.setValueAtTime(freq, now + idx * 0.035); // leve dedilhado
-
-        // Envelope acústico percussivo
-        gain.gain.setValueAtTime(0.001, now);
-        gain.gain.exponentialRampToValueAtTime(0.08, now + 0.04 + idx * 0.035);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.85);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        osc.start(now + idx * 0.035);
-        osc.stop(now + 0.95);
-      });
-    }
-
-    function toggleAudioPreview() {
-      const playIcon = document.getElementById('playIcon');
-      const playerStatus = document.getElementById('playerStatus');
-      const eq = document.getElementById('equalizerContainer');
-      const trackName = document.getElementById('audioTrackName');
-
-      if (!audioCtx) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        audioCtx = new AudioContext();
-      }
-
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      if (isPlayingAudio) {
-        clearInterval(audioLoopTimer);
-        isPlayingAudio = false;
-        playIcon.className = "fa-solid fa-play ml-0.5";
-        playerStatus.textContent = "Toque para ouvir a harmonia";
-        eq.classList.add('opacity-40');
-      } else {
-        isPlayingAudio = true;
-        playIcon.className = "fa-solid fa-pause";
-        playerStatus.textContent = "Tocando levada acústica";
-        eq.classList.remove('opacity-40');
-
-        let step = 0;
-        const playStep = () => {
-          const chord = sambaCadence[step % sambaCadence.length];
-          trackName.textContent = chord.name;
-          playChord(chord.freqs);
-          step++;
-        };
-
-        playStep();
-        audioLoopTimer = setInterval(playStep, 950);
-      }
     }
   </script>
 </body>
