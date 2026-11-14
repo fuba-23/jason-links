@@ -109,15 +109,18 @@
       <h1 class="font-serif text-3xl font-bold tracking-tight text-white mb-1">
         Jason Estilo Livre
       </h1>
-      <p class="text-samba-gold text-xs sm:text-sm font-semibold tracking-wider uppercase mb-2">
+      <p class="text-samba-gold text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3">
         Samba • Pagode • Sertanejo • MPB Contemporânea
       </p>
-      <p class="text-stone-300 text-xs sm:text-sm max-w-xs leading-relaxed">
-        Música brasileira autêntica que transforma momentos em memórias inesquecíveis. Shows ao vivo com energia e repertório envolvente para bares, casamentos, aniversários e confraternizações.
+      <h2 class="text-white text-sm sm:text-base font-bold max-w-sm leading-snug mb-1.5">
+        Música brasileira autêntica que transforma momentos em memórias inesquecíveis.
+      </h2>
+      <p class="text-stone-300 text-xs sm:text-sm max-w-sm leading-relaxed">
+        Shows ao vivo com energia e repertório envolvente para bares, casamentos, aniversários e confraternizações.
       </p>
 
       <!-- Mini Badges de Cidade / Redes -->
-      <div class="flex items-center gap-3 mt-3 text-xs text-stone-400">
+      <div class="flex items-center gap-3 mt-4 text-xs text-stone-400">
         <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-samba-terracotta"></i> São José dos Campos / Brasil</span>
         <span>•</span>
         <span class="flex items-center gap-1.5"><i class="fa-solid fa-microphone-lines text-samba-gold"></i> Voz & Violão</span>
@@ -490,7 +493,7 @@
       try {
         const success = document.execCommand("copy");
         if (success) {
-          showToast('Link copiado com sucesso!');
+          showToast('Link do perfil copiado com sucesso!');
         } else {
           showToast('Endereço pronto para compartilhamento!', 'fa-info-circle text-cyan-400');
         }
